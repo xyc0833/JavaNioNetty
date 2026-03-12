@@ -1,3 +1,3 @@
 public interface Study {
-    int study(int a);
+    void study();
 }
