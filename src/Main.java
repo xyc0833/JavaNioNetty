@@ -18,16 +18,25 @@ public class Main {
         //study.study(11);
         //study1.study();
 
-        Study study = () -> System.out.println("hello world");
-        test(study);
+        //Study study = () -> System.out.println("hello world");
+        //test(study);
 
         //然后更简单的写法
         //直接把study接口的实现放进去了
-        test( () -> System.out.println("123123"));
+        //test( () -> System.out.println("123123"));
+        Study s = (a,b) -> a + b;
+        //等价于
+        Study s01 = Integer::sum;
+        //方法引用 已经实现了的方法 拿过来 （是指 参数和返回值相同的情况下 我想直接用别人已经实现好的方法 就用这种双冒号的形式）
+        //等价于
+        //Study s01 = (a,b) -> Integer.sum(a,b);
+
+
+        System.out.println(s.sum(10, 20));
     }
 
     //比方说 test方法 需要一个study对象
-    private static void test(Study study){
-
-    }
+//    private static void test(Study study){
+//
+//    }
 }
